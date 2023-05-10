@@ -43,13 +43,18 @@
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "nilan";
+    homeDirectory = "/home/nilan";
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
+ 	home.package =  with pkgs; [
+		 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+		 #  wget
+		 crystal
+	 ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
