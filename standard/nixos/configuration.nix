@@ -92,12 +92,15 @@
 	    LC_TIME = "pt_BR.UTF-8";
 	  };
   #}}}
+  #users.mutableUsers = false;
   users.users = {
     # FIXME: Replace with your username
     # TODO: You can set an initial password for your user.
     # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
     # Be sure to change it (using passwd) after rebooting!
     nilan = {
+    	#passwordHash = "$6$PI9zDSZsRE5ysWjy$oOa.2EKJUAROoAsQ1VZlpljS8Xt13SBMPdQjjbYZEvajOW6rsRKKF8aXO3ppYLwJe/y5TjuXEOwAs3otLq2MO.";
+		 	#password = "default";
 	    isNormalUser = true;
 	    description = "nilan";
 	    extraGroups = [ "networkmanager" "wheel" ];
@@ -165,6 +168,8 @@
  		 git
  		 micro
  		 starship
+ 		 unstable.ruby_3_1
+ 		 unstable.crystal_1_7
  	 ];
 
   programs.starship = {
