@@ -82,6 +82,7 @@
 
 	  i18n.extraLocaleSettings = {
 	    LC_ADDRESS = "pt_BR.UTF-8";
+	    LC_ALL = "pt_BR.UTF-8";
 	    LC_IDENTIFICATION = "pt_BR.UTF-8";
 	    LC_MEASUREMENT = "pt_BR.UTF-8";
 	    LC_MONETARY = "pt_BR.UTF-8";
@@ -144,7 +145,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  # for a WiFi printer
+  services.avahi.openFirewall = true;
+  services.printing.drivers = [ pkgs.gutenprint ];
 	 # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -168,6 +173,7 @@
  		 git
  		 micro
  		 starship
+ 		 (unstable.opera.override { proprietaryCodecs = true; })
  		 unstable.ruby_3_1
  		 unstable.crystal_1_7
  	 ];
